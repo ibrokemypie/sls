@@ -99,7 +99,7 @@ public class UserInfo extends NetRunnable {
     }
 
     private String getAllTimeScrobbles() throws IOException, NullPointerException {
-        if (getNetApp() == NetApp.LISTENBRAINZ || getNetApp() == NetApp.LISTENBRAINZ) {
+        if (getNetApp() == NetApp.LISTENBRAINZ || getNetApp() == NetApp.LISTENBRAINZ || getNetApp() == NetApp.PLEROMA) {
             // TODO: Get total number of tracks in data base (make/wait for, pull request listenbrainz)
          /*   URL url;
             HttpsURLConnection conn = null;

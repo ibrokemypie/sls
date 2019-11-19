@@ -45,7 +45,11 @@ public enum NetApp {
     LISTENBRAINZCUSTOM(
             0x05, "ListenBrainz Server", "LISTENBRAINZ_URL_CUSTOM", R.string.settings_prefix_listenbrainz_custom,
             "[[LISTENBRAINZ_URL]]/login/", "[[LISTENBRAINZ_URL]]/user/%1",
-            "[[LISTENBRAINZ_API_URL]]/1/", R.drawable.ic_listenbrainz, true
+            "[[LISTENBRAINZ_API_URL]]/1/", R.drawable.ic_listenbrainz, true),
+    PLEROMA(
+            0x06, "Pleroma Instance", "PLEROMA_URL", R.string.settings_prefix_pleroma,
+            "[[PLEROMA_URL]]/registration", "[[PLEROMA_URL]]/%1",
+            "[[PLEROMA_URL]]/api/v1/", R.drawable.ic_pleroma, true
     );
 
     private final int val;
@@ -148,6 +152,9 @@ public enum NetApp {
         if (val == 5) {
             value = value.replace("[[LISTENBRAINZ_URL]]", settings.getListenBrainzUrl(this));
             value = value.replace("[[LISTENBRAINZ_API_URL]]", settings.getListenBrainzApiUrl(this));
+        }
+        if (val == 6) {
+            value = value.replace("[[PLEROMA_URL]]", settings.getPleromaUrl(this));
         }
         return value;
     }

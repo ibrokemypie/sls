@@ -11,6 +11,7 @@
     <string name="listen_brainz_url" translatable="false">ListenBrainz URL</string>
     <string name="listen_brainz_api_url" translatable="false">ListenBrainz API URL</string>
     <string name="listen_brainz_token" translatable="false">ListenBrainz Token</string>
+    <string name="pleroma_url" translatable="false">Pleroma URL</string>
     <string name="supported_musicapps" translatable="false">Spotify, Google Music, Deezer, 
 		Rhapsody/Napster, Rdio, My Cloud Player, SoundCloud, 8tracks, 
 		InfiniTracks, Squeezer, Amazon Music, Huawei, n7player, BuMP, PowerAMP, Black Player, AIMP, 
@@ -46,6 +47,7 @@
     <string name="settings_prefix_listenbrainz" translatable="false">ListenBrainz</string>
     <string name="settings_prefix_libre_fm_custom" translatable="false">libre.fmCustom</string>
     <string name="settings_prefix_listenbrainz_custom" translatable="false">ListenBrainzCustom</string>
+    <string name="settings_prefix_pleroma" translatable="false">Pleroma</string>
     <string name="user_creds_list_body" translatable="false">user_creds_list_body</string>
     <!-- END NetApp and Preference Data -->
 </resources>

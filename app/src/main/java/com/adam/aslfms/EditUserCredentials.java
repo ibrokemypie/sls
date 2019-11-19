@@ -55,6 +55,8 @@ public class EditUserCredentials extends DialogPreference {
     private EditText mListenBrainzURL;
     private EditText mListenBrainzApiURL;
     private CheckBox mListenBrainzSecureSocket;
+    private EditText mPleromaURL;
+    private CheckBox mPleromaSecureSocket;
 
     private AppSettings settings;
     private NetApp mNetApp;
@@ -125,6 +127,14 @@ public class EditUserCredentials extends DialogPreference {
                 mListenBrainzSecureSocket.setChecked(settings.getSecureSocketListenbrainz(mNetApp));
                 view.findViewById(R.id.listenBrainzCustom).setVisibility(View.VISIBLE);
             }
+
+            if (mNetApp == NetApp.PLEROMA) {
+                mPleromaURL = (EditText) view.findViewById(R.id.pleromaURL);
+                mPleromaSecureSocket = (CheckBox) view.findViewById(R.id.pleromaSecureSocketSwitch);
+                mPleromaURL.setText(settings.getPleromaUrl(mNetApp));
+                mPleromaSecureSocket.setChecked(settings.getSecureSocketPleroma(mNetApp));
+                view.findViewById(R.id.pleroma).setVisibility(View.VISIBLE);
+            }
     }
 
     @Override
@@ -164,6 +174,12 @@ public class EditUserCredentials extends DialogPreference {
                 String listenBrainzApiURL = mListenBrainzApiURL.getText().toString().trim();
                 settings.setListenBrainzApiUrl(mNetApp, listenBrainzApiURL);
                 settings.setSecureSocketListenbrainz(mNetApp, mListenBrainzSecureSocket.isChecked());
+            }
+
+            if (mNetApp == NetApp.PLEROMA) {
+                String pleromaURL = mPleromaURL.getText().toString().trim();
+                settings.setPleromaUrl(mNetApp, pleromaURL);
+                settings.setSecureSocketPleroma(mNetApp, mPleromaSecureSocket.isChecked());
             }
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && settings.isActiveAppEnabled(Util.checkPower(getContext()))) {

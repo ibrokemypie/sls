@@ -64,6 +64,8 @@ public class AppSettings {
     private static final String KEY_LISTENBRAINZ_TOKEN = "listenBrainz_token";
     private static final String KEY_LISTENBRAINZ_URL = "listenBrainz_url";
     private static final String KEY_LISTENBRAINZ_API_URL = "listenBrainz_api_url";
+    private static final String KEY_PLEROMA_URL = "pleroma_url";
+    private static final String KEY_SECURE_SOCKET_PLEROMA = "ssl_pleroma_fm";
     private static final String KEY_SECURE_SOCKET_LISTENBRAINZ = "ssl_listenbrainz_fm";
     private static final String KEY_PWDMD5 = "pwdMd5";
     private static final String KEY_SESSION = "sessionKey";
@@ -227,6 +229,26 @@ public class AppSettings {
     public void setListenBrainzApiUrl(NetApp napp, String s) {
         Editor e = prefs.edit();
         e.putString(napp.getSettingsPrefix() + KEY_LISTENBRAINZ_API_URL, s);
+        e.commit();
+    }
+
+    public String getPleromaUrl(NetApp napp) {
+        return prefs.getString(napp.getSettingsPrefix() + KEY_PLEROMA_URL, "");
+    }
+
+    public void setPleromaUrl(NetApp napp, String s) {
+        Editor e = prefs.edit();
+        e.putString(napp.getSettingsPrefix() + KEY_PLEROMA_URL, s);
+        e.commit();
+    }
+
+    public Boolean getSecureSocketPleroma(NetApp napp) {
+        return prefs.getBoolean(napp.getSettingsPrefix() + KEY_SECURE_SOCKET_PLEROMA, true );
+    }
+
+    public void setSecureSocketPleroma(NetApp napp, Boolean b) {
+        Editor e = prefs.edit();
+        e.putBoolean(napp.getSettingsPrefix() + KEY_SECURE_SOCKET_PLEROMA, b);
         e.commit();
     }
 

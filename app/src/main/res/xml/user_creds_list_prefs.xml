@@ -29,6 +29,13 @@
         android:icon="@drawable/ic_listenbrainz"
         android:visibility="gone"
         />
+    <Preference
+        android:id="@+id/preference"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/ic_pleroma"
+        android:key="@string/settings_prefix_pleroma"
+        android:visibility="gone" />
     <PreferenceCategory
         android:key="clear_all_creds_category"
         android:title="@string/other_category_title" />
